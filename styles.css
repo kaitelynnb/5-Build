@@ -1,8 +1,8 @@
-/* CSS by Christina Carrasquilla, iteration by */
+/* CSS by Christina Carrasquilla, iteration by Kaitelynn Blethen */
 
 /* ===== Color Palette ===== 
 
-    backgound: #0f172a;
+    background: #0f172a;
     nav-footer: #020617;
     card: #1e293b;
     text-main: #e2e8f0;
@@ -11,76 +11,191 @@
 }
 */
 
-/* ===== GLOBAL (Base) Styles ===== */
-body {
-    font-family: Helvetica, Arial, sans-serif;
+/* ===== GLOBAL Styles (MOBILE FIRST) ===== */
+
+* {
     margin: 0;
-    background-color: #0f172a;
-    color: #e2e8f0;
-    min-width:500px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     display:grid;
     grid-template-columns:1fr;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    border:4px solid #38bdf8;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+/* ===== LAYOUT ===== */
+
+header, nav, main, footer {
+    grid-column: 1/-1;
+}
+
+header, footer {
+    text-align: center;
+    border:3px solid #38bdf8;
 }
 
 header {
     background-color: #1e293b;
-    text-align: center;
-    padding: 1.5rem;
 }
 
-header h1 {
-    margin: 0;
+footer {
+    background-color: #020617;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+h1 {
+    font-size: 3.25rem;
+    font-weight: bolder;
+    padding: 2rem;
+}
+
+h2 {
+    font-size: 1.65rem;
+    font-weight: bolder;
+    text-decoration: underline;
+    line-height: 2;
+    padding: .5rem;
+    margin-bottom: .75rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    line-height: 1.5;
+    padding: .5rem;
+    margin-bottom: .75rem;
 }
 
 header p {
+    line-height: 1.5;
+    letter-spacing: 0.05px;
+    word-spacing: .05px;
+    padding: 1rem;
     margin-top: 0.5rem;
+    margin-bottom: 1rem;
     color: #94a3b8;
 }
 
+p {
+    line-height: 1.5;
+    letter-spacing: 0.05px;
+    word-spacing: .05px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: #e2e8f0;
+}
+
+aside p {
+    line-height: 1.5;
+    letter-spacing: 0.05px;
+    word-spacing: .05px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    color: #1e293b;
+}
+
+/* ===== NAVIGATION ===== */
+
 nav {
+    display: flex;
+    justify-content: space-around;
     background-color: #020617;
+    border:1px dashed #38bdf8;
+    margin: .5rem;
+    padding: 1rem;
 }
 
 nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    padding-left: 1.5rem;
 }
 
 nav a {
+    display: block;
     color: #e2e8f0;
     text-decoration: none;
-    padding: 0.5rem;
-    display: block;
-    border-left: 4px solid #38bdf8;
+    font-size: .9rem;
+    padding: 0.75rem 1rem;
     margin: .25rem;
+    border-left: 4px solid #38bdf8;
 }
 
 nav a:hover {
-    background-color: #334155;
+    background-color: #1e293b;
 }
 
+/* ===== MAIN CONTENT ===== */
+
 main {
-    padding: 1rem;
+    padding: 2rem;
+    border: 3px solid #38bdf8;
+}
+
+main ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 img {
     width:100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 1px;
 }
+
+/* ===== CONTENT SECTIONS ===== */
 
 #screenings, #workshops, #collaborations {
     background-color: #1e293b;
     padding: 1rem;
+    border: 3px solid #38bdf8;
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: #0f172a;
     padding: 1rem;
-    border-left: 4px solid #38bdf8;
+}
+
+.card-row > section {
+    flex: 1 1 300px;
+    width: 30%;
+    background-color: #1e293b;
+    padding: 1rem;
 }
 
 aside {
+    display: flex;
+    flex-direction: column;
     background-color: #38bdf8;
     color: #1e293b;
     padding: 1rem;
-    padding: 1rem;
 }
+
+/* ===== LINKS ===== */
 
 a {
     display:block;
@@ -95,17 +210,22 @@ a:hover {
     background-color:#e2e8f0;
 }
 
-footer {
-    background-color: #020617;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 1rem;
-}
+/* ===== RESPONSIVE STYLES ===== */
 
-/* ===== Media Query (Medium) ===== */
-/* write a media query for a screen with at least 800px */
-/* change the body's grid template to 1fr 300px */
-/* target the header, nav, and footer and style their grid-column to 1/-1 */
-/* target the nav and display it flex, spaceed around */
-/* target the .card-row to display flex */
-/* target the sections in .card-row witha width for 30% */
+@media screen and (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+@media screen and (min-width: 800px) {
+    body {
+        grid-template-columns: 1fr 300px;
+    }
+    main {
+        grid-column: 1;
+    }
+    aside {
+        grid-column: 2;
+    }
+}
