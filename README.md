@@ -11,7 +11,7 @@ This website is a multi-page project featuring a template with spaces for inform
 - collaborations.html
 
 ## Published Website
-TBD
+You can [view the published site here](https://kaitelynnb.github.io/5-Build/).
 
 ## AI Use Statement
 Written content for this website was generated with the assistance of ChatGPT and reviewed and edited by Kaitelynn Blethen. All HTML and CSS code was written by Kaitelynn Blethen.
